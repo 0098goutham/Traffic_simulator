@@ -1,0 +1,53 @@
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
+
+// Set the LCD address to 0x27 for a 16 chars and 2 line display
+// If 0x27 doesn't work, try 0x3F
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Pin Definitions
+const int redPin = 11;
+const int yellowPin = 10;
+const int greenPin = 9;
+
+void setup() {
+  // Initialize LED pins as outputs
+  pinMode(redPin, OUTPUT);
+  pinMode(yellowPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+
+  // Initialize LCD
+  lcd.init();
+  lcd.backlight();
+  
+  lcd.setCursor(0, 0);
+  lcd.print("System Ready");
+  delay(2000);
+}
+
+void loop() {
+  // GREEN LIGHT
+  updateLight("GREEN - GO", LOW, LOW, HIGH);
+  delay(5000);
+
+  // YELLOW LIGHT
+  updateLight("YELLOW - WAIT", LOW, HIGH, LOW);
+  delay(2000);
+
+  // RED LIGHT
+  updateLight("RED - STOP", HIGH, LOW, LOW);
+  delay(5000);
+}
+
+// Helper function to handle LEDs and LCD updates
+void updateLight(String message, int redState, int yellowState, int greenState) {
+  digitalWrite(redPin, redState);
+  digitalWrite(yellowPin, yellowState);
+  digitalWrite(greenPin, greenState);
+  
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Status:");
+  lcd.setCursor(0, 1);
+  lcd.print(message);
+}
