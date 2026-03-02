@@ -1,0 +1,52 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
+
+const int redLED = 8;
+const int yellowLED = 9;
+const int greenLED = 10;
+
+void countdown(int time, String lightName) {
+  for (int i = time; i >= 0; i--) {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print(lightName);
+    lcd.setCursor(0, 1);
+    lcd.print("Time: ");
+    lcd.print(i);
+    lcd.print("s");
+    delay(1000);
+  }
+}
+
+void setup() {
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  
+  lcd.begin(16, 2);
+}
+
+void loop() {
+  
+  digitalWrite(greenLED, LOW);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(redLED, HIGH);
+  countdown(8, "RED");
+  
+  digitalWrite(greenLED, LOW);
+  digitalWrite(yellowLED, HIGH);
+  digitalWrite(redLED, LOW);
+  countdown(3, "YELLOW");
+
+  digitalWrite(greenLED, HIGH);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(redLED, LOW);
+  countdown(8, "GREEN");
+  
+  digitalWrite(greenLED, LOW);
+  digitalWrite(yellowLED, HIGH);
+  digitalWrite(redLED, LOW);
+  countdown(3, "YELLOW");
+
+}
