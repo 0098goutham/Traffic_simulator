@@ -1,1 +1,45 @@
+#include <Wire.h>
+#include <Adafruit_LiquidCrystal.h>
 
+Adafruit_LiquidCrystal lcd(0);
+
+#define RED 13
+#define YELLOW 12
+#define GREEN 11
+
+void setup()
+{
+  pinMode(RED, OUTPUT);
+  pinMode(YELLOW, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+
+  lcd.begin(16, 2);
+  lcd.setBacklight(HIGH);
+}
+
+void showPhase(int r, int y, int g, const char* text, int timeSec)
+{
+  digitalWrite(RED, r);
+  digitalWrite(YELLOW, y);
+  digitalWrite(GREEN, g);
+
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print(text);
+
+  for(int i = timeSec; i > 0; i--)
+  {
+    lcd.setCursor(0,1);
+    lcd.print("Time: ");
+    lcd.print(i);
+    lcd.print(" ");
+    delay(1000);
+  }
+}
+
+void loop()
+{
+  showPhase(HIGH, LOW, LOW, "STOP - RED", 5);
+  showPhase(LOW, HIGH, LOW, "WAIT - YELLOW", 3);
+  showPhase(LOW, LOW, HIGH, "GO - GREEN", 5);
+}
