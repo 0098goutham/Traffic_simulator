@@ -1,0 +1,8 @@
+﻿Name,Quantity,Component
+"U1",1," Arduino Uno R3"
+"U2",1,"PCF8574-based, 39 (0x27) LCD 16 x 2 (I2C)"
+"R1",1,"220 Ω Resistor"
+"D1",1,"Red LED"
+"D2",1,"Yellow LED"
+"R2, R3",2,"1 kΩ Resistor"
+"D3",1,"Green LED"
