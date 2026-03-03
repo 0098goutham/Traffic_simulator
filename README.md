@@ -1,9 +1,3 @@
-Here is the updated, ready-to-paste `README.md` file. I have included your specific Tinkercad link and the "Cohort 6" attribution at the bottom.
-
-
-
-```markdown
-
 \# Traffic Light Simulator with I2C LCD
 
 
@@ -104,13 +98,7 @@ void loop() {
 
 }
 
-
-
 ```
-
-
-
----
 
 
 
@@ -162,9 +150,5 @@ void loop() {
 
 
 
-```
 
-
-
-```
 
