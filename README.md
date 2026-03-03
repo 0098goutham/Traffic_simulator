@@ -1,12 +1,11 @@
-\# Traffic Light Simulator with I2C LCD
+# Traffic Light Simulator with I2C LCD
 
 
 
 A microcontroller-based traffic management system that mimics real-world signal sequences. This project features an \*\*Arduino Uno\*\*, high-visibility LEDs, and a \*\*16x2 LCD\*\* interface using the I2C protocol for real-time status updates and live countdown timers.
 
 
-
-\## 🚀 Overview
+## 🚀 Overview
 
 This simulator provides a visual and functional representation of a standard traffic intersection. 
 
@@ -16,13 +15,10 @@ This simulator provides a visual and functional representation of a standard tra
 
 \* \*\*User Interface:\*\* Displays a live countdown timer for each phase to inform "drivers" of the remaining duration.
 
-
-
 ---
 
 
-
-\## 🛠️ Hardware Components
+## 🛠️ Hardware Components
 
 | Component | Quantity | Purpose |
 
@@ -43,8 +39,7 @@ This simulator provides a visual and functional representation of a standard tra
 ---
 
 
-
-\## 🖇️ Circuit Configuration
+## 🖇️ Circuit Configuration
 
 
 
@@ -52,7 +47,7 @@ The circuit is designed for simplicity and reliability. Below is the pin mapping
 
 
 
-\### LED Connections
+### LED Connections
 
 \* \*\*Red LED:\*\* Pin 13
 
@@ -62,7 +57,7 @@ The circuit is designed for simplicity and reliability. Below is the pin mapping
 
 
 
-\### LCD (I2C) Connections
+### LCD (I2C) Connections
 
 \* \*\*SCL:\*\* Pin A5
 
@@ -78,7 +73,7 @@ The circuit is designed for simplicity and reliability. Below is the pin mapping
 
 
 
-\## 💻 Software Logic
+## 💻 Software Logic
 
 The firmware is built in C++ and utilizes the `Adafruit\_LiquidCrystal` library. The core logic is encapsulated in the `showPhase()` function, which handles LED actuation, LCD messaging, and a precise 1-second countdown loop.
 
@@ -102,9 +97,7 @@ void loop() {
 
 
 
-\## ⚙️ Setup Instructions
-
-
+## ⚙️ Setup Instructions
 
 1\. \*\*Hardware:\*\* Wire the components as per the circuit description above.
 
@@ -114,37 +107,21 @@ void loop() {
 
 \* `Wire.h` (Built-in)
 
-
-
-
-
 3\. \*\*Upload:\*\* Connect your Arduino via USB and upload the provided `.ino` file.
 
 4\. \*\*Simulation:\*\* You can view and run the simulation online here: \[Tinkercad Project Link](https://www.tinkercad.com/things/8mny8VDLIAQ-mini-project-traffic-simulator?sharecode=QOwnRuXn3igLao3jpFfystlotIsorkCzA727tHLX5jU)
 
-
-
 ---
 
-
-
-\## 🌟 Future Scope
-
-
+## 🌟 Future Scope
 
 \* \*\*Sensor Integration:\*\* Adding ultrasonic sensors to detect vehicle presence and adjust timing dynamically.
 
 \* \*\*Pedestrian Mode:\*\* Adding a physical interrupt button for pedestrian crossing requests.
 
-
-
 ---
 
-
-
-\## 👤 Author
-
-
+## 👤 Author
 
 \*\*Developed by Cohort 6 Group\*\*
 
