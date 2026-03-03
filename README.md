@@ -109,7 +109,7 @@ void loop() {
 
 3\. \*\*Upload:\*\* Connect your Arduino via USB and upload the provided `.ino` file.
 
-4\. \*\*Simulation:\*\* You can view and run the simulation online here: \[Tinkercad Project Link](https://www.tinkercad.com/things/8mny8VDLIAQ-mini-project-traffic-simulator?sharecode=QOwnRuXn3igLao3jpFfystlotIsorkCzA727tHLX5jU)
+4. **Simulation:** You can view and run the project online via [Tinkercad Traffic Light Simulator](https://www.tinkercad.com/things/8mny8VDLIAQ-mini-project-traffic-simulator?sharecode=QOwnRuXn3igLao3jpFfystlotIsorkCzA727tHLX5jU)
 
 ---
 
